@@ -27,9 +27,9 @@ public class BubbleSort {
 	
 	public static void main(String []args){
 		int[] arra={9,3,6,5,4,3,8};
-		System.out.println("≈≈–Ú«∞£∫");
+		System.out.println("sort before");
 		GetArray(arra);
-		System.out.println("≈≈–Ú∫Û£∫");
+		System.out.println("sort after");
 		Sort(arra);
 		GetArray(arra);
 	}	
