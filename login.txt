@@ -1,0 +1,27 @@
+
+/u01/biee12c/app/Oracle/Middleware/Oracle_Home/user_projects/domains/bi/bitools/bin
+./stop.sh  ./start.sh
+
+
+上传路径
+/u01/biee12c/app/Oracle/Middleware/Oracle_Home/user_projects/domains/bi/bitools/bin
+sh datamodel.sh uploadrpd -u weblogic -p manager1234 -i NEW_DATA.rpd -w Admin123 -S  localhost.localdomain -SI ssi
+
+
+12c回写的官方文档
+https://docs.oracle.com/middleware/12213/biee/BIESG/GUID-FF6954BA-2DE0-4422-BA58-05F32936F4FF.htm#BIESG1358
+
+
+instanceconfig.xml  12c路径：/u01/biee12c/app/Oracle/Middleware/Oracle_Home/user_projects/domains/bi/config/fmwconfig/biconfig/OBIPS/instanceconfig.xml
+
+（回写模板） /u01/biee12c/app/Oracle/Middleware/Oracle_Home/user_projects/domains/bi/bidata/service_instances/ssi/metadata/content/msgdb/l_en/customMessages
+1）.webMessage的name属性名可以不一致
+
+2）.virtualTable和测试表之间建立连接关系，表与表之间的箭头指向没影响
+
+ http://10.5.202.73:9301/p2pd/servlet/dispatch?b_action=xts.run&m=portal/cc.xts&gohome=
+http://rj7yc.hand-china.com:22950/p2pd/servlet/dispatch?b_action=xts.run&m=portal/cc.xts&gohome=
+
+jdbc:oracle:thin:@192.168.10.5:1521:orcl
+
+expdp hap_ft/hap_ft@cadb DIRECTORY=DATA_PUMP_DIR  dumpfile=DY0129.dmp compression=all  
